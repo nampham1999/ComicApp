@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "158074943194",
+    "project_id": "tcheck-83ea6",
+    "storage_bucket": "tcheck-83ea6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158074943194:android:986c21726fe11ef0c957e3",
+        "android_client_info": {
+          "package_name": "com.vdt.tcomic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158074943194-tcn1srhoklo9a6i8kdfep6ht864l9g9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn0P7B_YNan6-f5dJoomrWxXaFtepQGk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158074943194-tcn1srhoklo9a6i8kdfep6ht864l9g9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
