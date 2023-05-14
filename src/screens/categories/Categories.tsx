@@ -74,32 +74,32 @@ const Categories = ({ navigation }: any) => {
 
 export default Categories;
 const styles = StyleSheet.create({
-    af8a17120348411ec92980fa8d3b47c02: {
-        width: Layout.window.width / 2.2,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: 70,
-        backgroundColor: Colors.Primary,
-        marginTop: 10,
-        borderRadius: 10,
-        padding: 5
-    },
-    af8a19830348411ec92980fa8d3b47c02: {
-        color: '#fff',
-        fontWeight: '600',
-        fontSize: 16,
-        textTransform: 'capitalize'
-    },
-    af8a19831348411ec92980fa8d3b47c02: {
-        fontSize: 12,
-        color: '#fff',
-        fontStyle: 'italic'
-    },
-    af8a1bf40348411ec92980fa8d3b47c02: {
-        marginTop: 20
-    },
-    container: {
-        flex: 1,
-        paddingTop: Platform.OS == 'ios' ? 0 : Layout.statusbarHeight
-    }
+  af8a17120348411ec92980fa8d3b47c02: {
+    width: Layout.window.width / 2.2,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: 70,
+    backgroundColor: Colors.grey500,
+    marginTop: 10,
+    borderRadius: 10,
+    padding: 5,
+  },
+  af8a19830348411ec92980fa8d3b47c02: {
+    color: Colors.TextBlack,
+    fontWeight: '600',
+    fontSize: 16,
+    textTransform: 'capitalize',
+  },
+  af8a19831348411ec92980fa8d3b47c02: {
+    fontSize: 12,
+    color: Colors.TextBlack,
+    fontStyle: 'italic',
+  },
+  af8a1bf40348411ec92980fa8d3b47c02: {
+    marginTop: 20,
+  },
+  container: {
+    flex: 1,
+    paddingTop: Platform.OS == 'ios' ? 0 : Layout.statusbarHeight,
+  },
 });

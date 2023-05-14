@@ -14,3 +14,4 @@ export const API_SEARCH = "https://api.qiqi.vn/book/search";
 export const API_EDIT_USER = "https://api.qiqi.vn/user/user";
 export const API_SETTING = "https://api.qiqi.vn/book/setting";
 export const API_LOGIN = "https://api.qiqi.vn/user/login";
+export const KEY_IMAGE = '_1660125383';

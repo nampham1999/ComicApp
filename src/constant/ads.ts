@@ -1,9 +1,18 @@
 import { Platform } from "react-native"
 import { InterstitialAd, RewardedAd, BannerAd, TestIds, BannerAdSize, RewardedAdEventType, AdEventType } from '@react-native-firebase/admob';
 
-const idBannerProd = Platform.OS == 'android' ? 'ca-app-pub-5959703253397625/1428011676' : 'ca-app-pub-5959703253397625/7672472937'
-const IdReward = Platform.OS == 'android' ? 'ca-app-pub-5959703253397625/6177759561' : 'ca-app-pub-5959703253397625/6297194973'
-const interstitialID = Platform.OS == 'android' ? 'ca-app-pub-5959703253397625/6177759561' : 'ca-app-pub-5959703253397625/9531033834'
+const idBannerProd =
+  Platform.OS == 'android'
+    ? 'ca-app-pub-2995284488082464~3997568024'
+    : 'ca-app-pub-5959703253397625/7672472937';
+const IdReward =
+  Platform.OS == 'android'
+    ? 'ca-app-pub-2995284488082464~3997568024'
+    : 'ca-app-pub-5959703253397625/6297194973';
+const interstitialID =
+  Platform.OS == 'android'
+    ? 'ca-app-pub-2995284488082464~3997568024'
+    : 'ca-app-pub-5959703253397625/9531033834';
 
 
 

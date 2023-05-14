@@ -27,12 +27,12 @@ axios.interceptors.request.use(function (config: any) {
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
 
-    console.log("RESPONSE", {
-        data: response.data,
-        status: response.status,
-        url: response.config.url,
-        body: response.config.data
-    })
+    console.log('RESPONSE', {
+      data: response.data,
+      status: response.status,
+      url: response.config.url,
+      body: response.config.data,
+    });
     return response.data;
 }, function (error) {
     console.log('ERROR', error || "CANCEL REQUEST")
