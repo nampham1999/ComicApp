@@ -1,0 +1,17 @@
+export const IMAGE_SERVER = 'https://i.truyenvua.com/ebook/190x247/';
+export const IMAGE_SERVER_AVATAR = 'http://avatar.mangaqq.com/';
+export const BASE_API = 'https://api.qiqi.vn/';
+export const API_CATEGORY = 'https://api.qiqi.vn/book/category';
+export const API_BOOK = 'https://api.qiqi.vn/book/book';
+export const API_VIEW = 'https://api.qiqi.vn/book/view';
+export const API_SUBSCRIBE = 'https://api.qiqi.vn/book/subscribe';
+export const API_LIKE = 'https://api.qiqi.vn/book/rating';
+export const API_HISTORY = 'https://api.qiqi.vn/book/history-read';
+export const API_COMMENT = 'https://api.qiqi.vn/book/comment';
+export const API_SLIDER = 'https://api.qiqi.vn/book/slider';
+export const API_MANGA = 'https://api.qiqi.vn/book/manga';
+export const API_SEARCH = 'https://api.qiqi.vn/book/search';
+export const API_EDIT_USER = 'https://api.qiqi.vn/user/user';
+export const API_SETTING = 'https://api.qiqi.vn/book/setting';
+export const API_LOGIN = 'https://api.qiqi.vn/user/login';
+export const KEY_IMAGE = '_1665761223';
