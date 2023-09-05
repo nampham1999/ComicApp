@@ -23,10 +23,12 @@ const ListPost = (props: any) => {
     props.navigation.setOptions({
       title: title || 'Danh Sách Truyện',
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.navigation]);
 
   useEffect(() => {
     getListBook();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getListBook = async () => {

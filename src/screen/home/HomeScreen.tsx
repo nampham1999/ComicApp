@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import HomeBanner from '../../components/banner/HomeBanner';
 import CardPostScroll from '../../components/card/CardPost';
 import dataService from '../../network/dataService';
+import Nointernet from '../../components/network/Nointernet';
 // import NetInfo from '@react-native-community/netinfo';
 // import Nointernet from '../components/network/Nointernet';
 // import SimpleToast from 'react-native-simple-toast';
@@ -123,8 +124,9 @@ export class HomeScreen extends Component<Props, State> {
       !this.props.newpost.length &&
       !this.props.compeletePost.length &&
       !this.props.pendingPost.length
-    )
+    ) {
       return <Nointernet />;
+    }
     return (
       <View style={styles.container}>
         <StatusBar

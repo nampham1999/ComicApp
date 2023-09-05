@@ -1,18 +1,11 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
 
-import Layout from '../../constant/Layout';
-import {useTheme, useNavigation} from '@react-navigation/native';
-import FastImage from 'react-native-fast-image';
-import PostItem from '../Item/PostItem';
-import Colors from '../../constant/Colors';
+import {useNavigation, useTheme} from '@react-navigation/native';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Colors from '../../constant/Colors';
+import Layout from '../../constant/Layout';
+import PostItem from '../Item/PostItem';
 import TText from '../Text';
 
 const CardPostScroll = (props: any) => {

@@ -1,10 +1,7 @@
-import {useNavigation} from '@react-navigation/core';
-import moment from 'moment';
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+
+import React, {useEffect, useMemo} from 'react';
 import {
-  ScrollView,
   StyleSheet,
-  Text,
   View,
   ImageBackground,
   TouchableOpacity,
@@ -35,7 +32,7 @@ const onScroll = Animated.event(
       nativeEvent: {
         contentOffset: {
           y: scrollY,
-        },
+        },  
       },
     },
   ],
@@ -86,6 +83,7 @@ const DetailPost = (props: any) => {
   const renderScene = useMemo(
     () =>
       SceneMap({
+        // eslint-disable-next-line react/no-unstable-nested-components
         first: () => (
           <Chaps
             onChapReady={(length: number, firstC: any) => {
@@ -97,6 +95,7 @@ const DetailPost = (props: any) => {
             headerHeight={HEADER_HEIGHT}
           />
         ),
+        // eslint-disable-next-line react/no-unstable-nested-components
         second: () => (
           <Animated.ScrollView
             style={{
@@ -116,6 +115,7 @@ const DetailPost = (props: any) => {
 
   const rederTabar = (props: any) => (
     <Animated.View
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         width: '100%',
         position: 'absolute',

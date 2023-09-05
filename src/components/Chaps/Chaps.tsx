@@ -233,7 +233,7 @@ const Chaps = ({data, onScroll, headerHeight, onRead, onChapReady}: any) => {
       // let listPromise = c.listPhoto.map((i: any) => imgToBase64(i))
       // let rs: any = await Promise.all(listPromise)
       let rs: any = await Promise.map(
-        c.listPhoto,
+        c?.listPhoto,
         (i: any) => {
           return imgToBase64(i);
         },
