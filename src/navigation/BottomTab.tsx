@@ -52,7 +52,7 @@ function BottomTab() {
         name="categories"
         component={Categories}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         options={{
           headerShown: false,
           tabBarIcon: (props: any) => <Ionicons name="search" {...props} />,
@@ -60,7 +60,7 @@ function BottomTab() {
         }}
         name="search"
         component={Search}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }

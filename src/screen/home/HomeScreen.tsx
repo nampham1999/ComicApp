@@ -8,7 +8,7 @@ import Nointernet from '../../components/network/Nointernet';
 // import NetInfo from '@react-native-community/netinfo';
 // import Nointernet from '../components/network/Nointernet';
 // import SimpleToast from 'react-native-simple-toast';
-// import RankComic from '../components/rank/RankComic';
+import RankComic from '../../components/rank/RankComic';
 // var DOMParser = require('react-native-html-parser').DOMParser;
 
 interface Props {
@@ -44,15 +44,17 @@ export class HomeScreen extends Component<Props, State> {
     this.getCompeletePost();
     this.getPendingPost();
 
-    // unsubscribe = NetInfo.addEventListener(state  => {
-    //   if (!state.isConnected)
+    // unsubscribe = NetInfo.addEventListener(state => {
+    //   if (!state.isConnected) {
     //     SimpleToast.show(
     //       'Bạn đang ngoại tuyến , bạn chỉ có thể đọc truyện đã tải trong tủ truyện',
+    //       SimpleToast.SHORT,
     //     );
-    //   this.props.dispatch({
-    //     type: 'SET_NETWORK',
-    //     data: state.isConnected,
-    //   });
+    //     this.props.dispatch({
+    //       type: 'SET_NETWORK',
+    //       data: state.isConnected,
+    //     });
+    //   }
     // });
   }
 
@@ -141,7 +143,7 @@ export class HomeScreen extends Component<Props, State> {
           showsVerticalScrollIndicator={false}>
           <HomeBanner data={this.props.banner} />
 
-          {/* <RankComic /> */}
+          <RankComic />
           <CardPostScroll
             data={this.props.newpost}
             title="TRUYỆN MỚI CẬP NHẬT"

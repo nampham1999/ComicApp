@@ -9,6 +9,7 @@ import Colors from '../constant/Colors';
 import DetailPost from '../screen/home/detail/DetailPost';
 import ReadPost from '../screen/home/read/ReadPost';
 import ListPost from '../screen/home/listpost/ListPost';
+import Search from '../screen/home/search/Search';
 
 const DemoScreen = () => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -70,6 +71,14 @@ function Stack() {
           }}
           name="ListPost"
           component={ListPost}
+        />
+        <StackNavigation.Screen
+          options={{
+            ...defaultOptioonScreen,
+            title: 'Tìm kiếm',
+          }}
+          name="Search"
+          component={Search}
         />
       </StackNavigation.Navigator>
     </NavigationContainer>

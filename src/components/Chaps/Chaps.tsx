@@ -1,26 +1,22 @@
+import AsyncStorage from '@react-native-community/async-storage';
 import {StackActions, useNavigation} from '@react-navigation/core';
 import moment from 'moment';
 import React, {useEffect, useState} from 'react';
-import dataService from '../../network/dataService';
 import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
   ActivityIndicator,
-  FlatList,
   Animated,
+  StyleSheet,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import TText from '../Text';
-import Colors from '../../constant/Colors';
+import ImgToBase64 from 'react-native-image-base64';
+import * as Progress from 'react-native-progress';
+import SimpleToast from 'react-native-simple-toast';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useDispatch, useSelector} from 'react-redux';
-import ImgToBase64 from 'react-native-image-base64';
-import AsyncStorage from '@react-native-community/async-storage';
-import SimpleToast from 'react-native-simple-toast';
-import * as Progress from 'react-native-progress';
+import Colors from '../../constant/Colors';
+import dataService from '../../network/dataService';
+import TText from '../Text';
 const Promise = require('bluebird');
 
 const imgToBase64 = (url: string) => {
@@ -56,11 +52,12 @@ const ChapItem = ({
 
   const onPressDownload = async () => {
     if (chapJson[item.id]) return;
-    if (onDownload)
+    if (onDownload) {
       return SimpleToast.show(
         'Vui lòng tải chậm chút nha !',
         SimpleToast.SHORT,
       );
+    }
     let itv = setInterval(() => {
       setPercent(val => {
         if (val > 70) {
@@ -119,7 +116,7 @@ const ChapItem = ({
             <Progress.Circle
               textStyle={{
                 fontSize: 11,
-                color: Colors.Primary,
+                color: 'white',
               }}
               showsText
               progress={percent / 100}
@@ -127,6 +124,7 @@ const ChapItem = ({
               color={Colors.Primary}
               size={30}
               indeterminate={percent < 3}
+              
             />
           </View>
         ) : (
@@ -232,14 +230,14 @@ const Chaps = ({data, onScroll, headerHeight, onRead, onChapReady}: any) => {
       });
       // let listPromise = c.listPhoto.map((i: any) => imgToBase64(i))
       // let rs: any = await Promise.all(listPromise)
-      let rs: any = await Promise.map(
-        c?.listPhoto,
+      let rs: any = c?.listPhoto.map(
+        // c?.listPhoto,
         (i: any) => {
           return imgToBase64(i);
         },
         {concurrency: 3},
       );
-
+      console.log('12222');
       await AsyncStorage.setItem(chap.id + '', JSON.stringify(rs));
       setOnDowload(false);
       dispatch({type: 'ADD_DOWNLOAD', data, chap: {...chap}});

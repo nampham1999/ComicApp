@@ -1,14 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import FastImage from 'react-native-fast-image'
-import Colors from '../../constant/Colors'
-import { IMAGE_SERVER } from '../../constant/hosts'
-import Layout from '../../constant/Layout'
-import TText from '../Text'
-import AntDesign from 'react-native-vector-icons/AntDesign'
-import { formatMoney } from '../../constant/ultis'
-import { useNavigation } from '@react-navigation/core'
-
+import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
+import Colors from '../../constant/Colors';
+import {IMAGE_SERVER} from '../../constant/hosts';
+import Layout from '../../constant/Layout';
+import TText from '../Text';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import {formatMoney} from '../../constant/ultis';
+import {useNavigation} from '@react-navigation/core';
 
 const PostItemVertical = ({item}: any) => {
   let navigation: any = useNavigation();
@@ -76,37 +75,37 @@ const PostItemVertical = ({item}: any) => {
   );
 };
 
-export default PostItemVertical
+export default PostItemVertical;
 
 const styles = StyleSheet.create({
-    wrapTxtCate: {
-        backgroundColor: '#eeeeee',
-        marginLeft: 2,
-        marginTop: 2,
-        borderRadius: 3,
-        padding: 2
-    },
-    wrapTag: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginTop: 3
-    },
-    txtCate: {
-        fontSize: 11,
-        color: 'gray'
-    },
-    nomal: {
-        marginTop: 3,
-        fontSize: 10,
-        color: 'gray'
-    },
-    wrapInfo: {
-        width: '100%',
-        flexDirection: 'row',
-        marginTop: 5
-    },
-    infoItem: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-})
+  wrapTxtCate: {
+    backgroundColor: '#eeeeee',
+    marginLeft: 2,
+    marginTop: 2,
+    borderRadius: 3,
+    padding: 2,
+  },
+  wrapTag: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 3,
+  },
+  txtCate: {
+    fontSize: 11,
+    color: 'gray',
+  },
+  nomal: {
+    marginTop: 3,
+    fontSize: 10,
+    color: 'gray',
+  },
+  wrapInfo: {
+    width: '100%',
+    flexDirection: 'row',
+    marginTop: 5,
+  },
+  infoItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});

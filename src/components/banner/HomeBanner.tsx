@@ -1,90 +1,45 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
-  View,
-  Text,
   ImageBackground,
-  SafeAreaView,
   StyleSheet,
+  TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
-import Carousel, {getInputRangeFromIndexes} from 'react-native-snap-carousel';
-import Layout from '../../constant/Layout';
-import {useNavigation} from '@react-navigation/native';
 import FastImage from 'react-native-fast-image';
-import {IMAGE_SERVER} from '../../constant/hosts';
-import TText from '../Text';
+import Carousel, {getInputRangeFromIndexes} from 'react-native-snap-carousel';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useSelector} from 'react-redux';
+import Colors from '../../constant/Colors';
+import Layout from '../../constant/Layout';
+import {IMAGE_SERVER} from '../../constant/hosts';
 import {formatMoney} from '../../constant/ultis';
-import {useDispatch, useSelector} from 'react-redux';
-import dataService from '../../network/dataService';
+import TText from '../Text';
 
 const HomeBanner = (props: any) => {
   const [slideBannerActive, setSlideBannerActive] = useState(0);
   const navigation: any = useNavigation();
   const isConnect = useSelector((state: any) => state.network.isConnect);
   const rank = useSelector((state: any) => state.home.rank);
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    getRank();
-  }, []);
 
-  const getRank = async () => {
-    let rs: any = await dataService.getRank();
-    if (!rs) return;
-    if (typeof rs.list != 'object') return;
-    dispatch({
-      type: 'SET_RANK',
-      data: rs.list,
-    });
-  };
-  const renderRank = (index: number) => {
-    switch (index + 1) {
-      case 1:
-        return (
-          <FastImage
-            style={styles.a2cef328039ff11ec8ae839f315486395}
-            source={require('../../assets/images/rank1.png')}
-          />
-        );
-
-      case 2:
-        return (
-          <FastImage
-            style={styles.a2cef599039ff11ec8ae839f315486395}
-            source={require('../../assets/images/rank2.png')}
-          />
-        );
-
-      case 3:
-        return (
-          <FastImage
-            style={styles.a2cef599139ff11ec8ae839f315486395}
-            source={require('../../assets/images/rank3.png')}
-          />
-        );
-
-      default:
-        return null;
-    }
-  };
   // vvvvvv BANNER vvvvvvv
   const _renderItemBanner = ({item, index}: any) => {
     return (
       <TouchableOpacity
+        key={index}
         activeOpacity={0.8}
         onPress={() => navigation.navigate('DetailPost', {item})}
         style={{
-          flex: 1,
+          // flex: 1,
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <View style={styles.a2ceff5d039ff11ec8ae839f315486395}>
-          {renderRank(index)}
-        </View>
         <FastImage
           resizeMode="stretch"
-          style={{borderRadius: 10, width: '100%', height: '70%'}}
+          style={{borderRadius: 10, width: '100%', height: '80%'}}
           source={{
             uri: IMAGE_SERVER + item.image,
           }}
@@ -96,7 +51,7 @@ const HomeBanner = (props: any) => {
           style={styles.txtItemBanner}>
           {item.name?.trim()}
         </TText>
-        {/* <Text style={styles.txtCate}>{item.category?.trim()}</Text> */}
+        {/* <TText style={styles.txtCate}>{item.category?.trim()}</TText> */}
         <View style={styles.wrapInfo}>
           <View style={styles.infoItem}>
             <AntDesign name="eye" color="#fff" size={10} />
@@ -151,9 +106,27 @@ const HomeBanner = (props: any) => {
       style={{
         height: Layout.isPad
           ? Layout.window.width / 2
-          : Layout.window.width / 1.3,
+          : Layout.window.width / 1.2,
       }}>
-      <View style={{height: Layout.statusbarHeight + 20}} />
+      <View style={{height: Layout.statusbarHeight + 0}} />
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Search')}
+        style={styles.input}>
+        <Ionicons
+          size={24}
+          color={Colors.grey500}
+          style={styles.iconSearch}
+          name="search"
+        />
+        <TextInput
+          onPressIn={() => navigation.navigate('Search')}
+          style={{flex: 1}}
+          placeholder="Tìm kiếm... "
+          placeholderTextColor={Colors.grey300}
+          value=""
+          editable={false}
+        />
+      </TouchableOpacity>
       {rank.length ? (
         <Carousel
           loop
@@ -246,5 +219,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 100,
+  },
+  input: {
+    alignSelf: 'center',
+    width: '80%',
+    backgroundColor: 'transparent',
+    borderColor: Colors.grey400,
+    borderRadius: 10,
+    borderWidth: 1,
+    height: 40,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    marginVertical: 10,
+  },
+  iconSearch: {
+    position: 'absolute',
+    right: '5%',
+    top: 7,
   },
 });

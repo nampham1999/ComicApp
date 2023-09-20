@@ -1,4 +1,3 @@
-
 import React, {useEffect, useMemo} from 'react';
 import {
   StyleSheet,
@@ -19,6 +18,7 @@ import Chaps from '../../../components/Chaps/Chaps';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import {useDispatch, useSelector} from 'react-redux';
 import SimpleToast from 'react-native-simple-toast';
+import DeviceInfo from 'react-native-device-info';
 const AnimatedBackgroud = Animated.createAnimatedComponent(ImageBackground);
 let offsetY = 0;
 const HEADER_HEIGHT = Layout.isPad
@@ -32,7 +32,7 @@ const onScroll = Animated.event(
       nativeEvent: {
         contentOffset: {
           y: scrollY,
-        },  
+        },
       },
     },
   ],
@@ -312,7 +312,7 @@ const DetailPost = (props: any) => {
       <View
         style={{
           width: '100%',
-          height: Layout.statusbarHeight + 90,
+          height: Layout.statusbarHeight + 50,
           // backgroundColor: '#fff',
           position: 'absolute',
           paddingTop: Layout.statusbarHeight,
@@ -341,6 +341,7 @@ const DetailPost = (props: any) => {
             fontSize: 16,
             fontWeight: '600',
             textTransform: 'uppercase',
+            top: DeviceInfo.hasDynamicIsland() ? 20 : 0,
           }}>
           Thông tin truyện
         </TText>

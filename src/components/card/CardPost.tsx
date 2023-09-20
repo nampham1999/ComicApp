@@ -62,9 +62,10 @@ export default CardPostScroll;
 
 const styles = StyleSheet.create({
   wrapCard: {
-    marginTop: 15,
+    marginTop: 35,
     width: '100%',
     minHeight: Layout.window.width / 2,
+
   },
   headerCard: {
     width: '100%',
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
   },
   titleCard: {
     fontWeight: 'bold',
+    fontSize: 16,
   },
   wrapRightHeader: {
     flexDirection: 'row',

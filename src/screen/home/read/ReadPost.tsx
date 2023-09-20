@@ -17,7 +17,11 @@ import TText from '../../../components/Text';
 import Colors from '../../../constant/Colors';
 import Layout from '../../../constant/Layout';
 import dataService from '../../../network/dataService';
+import {useNavigation} from '@react-navigation/native';
+import DeviceInfo from 'react-native-device-info';
+
 const ReadPost = (props: any) => {
+  const navigation = useNavigation();
   let {item, dataBook, index, length} = props.route.params;
   const chaps = useSelector(
     (state: any) => state.chapReducer.chaps[dataBook.id],
@@ -52,14 +56,16 @@ const ReadPost = (props: any) => {
       data: dataBook,
       chap: chapSelect,
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chapSelect]);
 
   const loadDataLocal = async () => {
     try {
       setShowLoading(true);
       let rs: any = await AsyncStorage.getItem(chapSelect.id + '');
-      if (!rs) return getRead();
+      if (!rs) {
+        return getRead();
+      }
       let rsJS = JSON.parse(rs);
       setImages(rsJS);
       setShowLoading(false);
@@ -111,7 +117,7 @@ function myFunction() {
   const renderActionBar = () => (
     <>
       <View style={styles.a0536abe033bc11ec92980fa8d3b47c02}>
-        <TouchableOpacity onPress={() => props.navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon size={30} color="#fff" name="arrowleft" />
         </TouchableOpacity>
         <TText style={styles.a0536abe133bc11ec92980fa8d3b47c02}>
@@ -127,11 +133,12 @@ function myFunction() {
             alignItems: 'flex-start',
           }}
           onPress={() => {
-            if (ref.current == length - 1)
+            if (ref.current == length - 1) {
               return SimpleToast.show(
                 'Không còn chương nào trước đó',
                 SimpleToast.SHORT,
               );
+            }
             ref.current = ref.current + 1;
             setChapselect(chaps[ref.current]);
           }}>
@@ -239,12 +246,15 @@ function myFunction() {
 };
 
 export default ReadPost;
+
 const styles = StyleSheet.create({
   a0536abe033bc11ec92980fa8d3b47c02: {
     width: '100%',
     position: 'absolute',
     backgroundColor: 'rgba(0,0,0,0.5)',
-    height: Layout.statusbarHeight + 40,
+    height: DeviceInfo.hasDynamicIsland()
+      ? Layout.statusbarHeight + 70
+      : Layout.statusbarHeight + 40,
     paddingTop: Layout.statusbarHeight,
     top: 0,
     zIndex: 10,
@@ -257,6 +267,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+    marginTop: DeviceInfo.hasDynamicIsland() ? 20 : 0,
   },
   a0536d2f033bc11ec92980fa8d3b47c02: {
     width: 40,
@@ -282,7 +293,7 @@ const styles = StyleSheet.create({
   },
   a0537211033bc11ec92980fa8d3b47c02: {
     width: '100%',
-    height: Layout.statusbarHeight + 40,
+    height: Layout.statusbarHeight + 60,
     flexDirection: 'row',
     backgroundColor: '#fff',
     shadowColor: '#000',
@@ -295,7 +306,7 @@ const styles = StyleSheet.create({
     elevation: 2,
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: Layout.statusbarHeight,
+    paddingTop: Layout.statusbarHeight + 25,
     paddingHorizontal: 10,
   },
   a0537211133bc11ec92980fa8d3b47c02: {

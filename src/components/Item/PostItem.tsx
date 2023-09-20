@@ -50,48 +50,48 @@ const PostItem = ({item, index, width}: any) => {
 export default PostItem;
 
 const styles = StyleSheet.create({
-    wrapItem: {
-        paddingHorizontal: 5,
-        marginTop: 10,
-    },
-    wrapTxtCate: {
-        backgroundColor: '#eeeeee',
-        marginLeft: 2,
-        marginTop: 2,
-        borderRadius: 3,
-        padding: 2
-    },
-    wrapTag: {
-        flexDirection: 'row',
-        width: Layout.window.width / 3,
-        flexWrap: 'wrap'
-    },
-    txtCate: {
-        fontSize: 11,
-        color: 'gray'
-    },
-    thumbnail: {
-        width: '100%',
-        aspectRatio: 0.7,
-        borderRadius: 10,
-    },
-    txtItemBanner: {
-        marginTop: 5,
-        fontWeight: '600',
-        fontSize: 13,
-        width: '100%',
-        textAlign: 'left',
-    },
-    txtCatePost: {
-        width: '100%',
-        textAlign: 'left',
-        fontSize: 10,
-    },
-    wrapStar: { width: '100%', flexDirection: 'row' },
-    fullStar: {
-        color: '#FFCC00',
-    },
-    lineStar: {
-        color: '#FFCC00',
-    },
+  wrapItem: {
+    paddingHorizontal: 5,
+    marginTop: 10,
+  },
+  wrapTxtCate: {
+    backgroundColor: '#eeeeee',
+    marginLeft: 2,
+    marginTop: 2,
+    borderRadius: 3,
+    padding: 2,
+  },
+  wrapTag: {
+    flexDirection: 'row',
+    width: Layout.window.width / 3,
+    flexWrap: 'wrap',
+  },
+  txtCate: {
+    fontSize: 11,
+    color: 'gray',
+  },
+  thumbnail: {
+    width: '100%',
+    aspectRatio: 0.7,
+    borderRadius: 10,
+  },
+  txtItemBanner: {
+    marginTop: 5,
+    fontWeight: '600',
+    fontSize: 13,
+    width: '100%',
+    textAlign: 'left',
+  },
+  txtCatePost: {
+    width: '100%',
+    textAlign: 'left',
+    fontSize: 10,
+  },
+  wrapStar: {width: '100%', flexDirection: 'row'},
+  fullStar: {
+    color: '#FFCC00',
+  },
+  lineStar: {
+    color: '#FFCC00',
+  },
 });

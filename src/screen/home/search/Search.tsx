@@ -5,15 +5,13 @@ import {
   Platform,
   SafeAreaView,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {useSelector} from 'react-redux';
 import PostItemVertical from '../../../components/Item/PostItemVertical';
-import Nointernet from '../../../components/network/Nointernet';
+// import Nointernet from '../../../components/network/Nointernet';
 import TText from '../../../components/Text';
 import Colors from '../../../constant/Colors';
 import Layout from '../../../constant/Layout';
@@ -27,10 +25,12 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const refSearch = useRef();
-  const isConnect = useSelector((state: any) => state.network?.isConnect);
+  // const isConnect = useSelector((state: any) => state.network?.isConnect);
 
   const onSearch = async () => {
-    if (!keyword) return;
+    if (!keyword) {
+      return;
+    }
     setData([]);
     inProcess = true;
     setLoading(true);
@@ -46,7 +46,6 @@ const Search = () => {
     if (rs?.list?.length < LIMIT) {
       canload = false;
     }
-
     setData(rs.list);
   };
 
@@ -66,13 +65,12 @@ const Search = () => {
     if (rs?.list?.length < LIMIT) {
       canload = false;
     }
-
     setData(data.concat(rs.list));
   };
 
   const renderItem = ({item, index}: any) => <PostItemVertical item={item} />;
 
-//   if (!isConnect) return <Nointernet />;
+  //   if (!isConnect) return <Nointernet />;
 
   return (
     <SafeAreaView style={styles.a5d77271034a911ec92980fa8d3b47c02}>
@@ -98,7 +96,7 @@ const Search = () => {
                 setKeyword('');
                 setData([]);
               }}>
-              <Ionicons size={20} name="md-close-circle" color="gray" />
+              <Ionicons size={20} name="close-circle" color="gray" />
             </TouchableOpacity>
           ) : null}
         </View>
@@ -138,7 +136,7 @@ const styles = StyleSheet.create({
   a5d77271034a911ec92980fa8d3b47c02: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS == 'ios' ? 0 : Layout.statusbarHeight + 10,
+    paddingTop: Platform.OS == 'ios' ? 20 : Layout.statusbarHeight + 10,
   },
   a5d77271134a911ec92980fa8d3b47c02: {
     backgroundColor: '#fff',
@@ -147,6 +145,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#eeeeee',
     alignItems: 'center',
+    marginTop: 10
   },
   a5d774e2034a911ec92980fa8d3b47c02: {
     width: '95%',

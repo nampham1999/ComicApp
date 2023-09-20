@@ -6,10 +6,9 @@
  */
 
 import React from 'react';
-import Appcontainer from './src/AppContainer';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import {PersistGate} from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import Appcontainer from './src/AppContainer';
 import configStore from './src/redux/store';
 
 const store = configStore.store;
@@ -25,8 +24,3 @@ function App(): JSX.Element {
 }
 
 export default App;
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
