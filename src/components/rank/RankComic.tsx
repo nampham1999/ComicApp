@@ -30,7 +30,7 @@ const RankComic = () => {
         paddingVertical: 15,
       }}>
       <View style={styles.headerCard}>
-        <TText style={[styles.titleCard]}>BẢNG XẾP HẠNG</TText>
+        <TText style={[styles.titleCard]}>TRENDING</TText>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View

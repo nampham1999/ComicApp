@@ -9,37 +9,6 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {formatMoney} from '../../constant/ultis';
 import {useNavigation} from '@react-navigation/core';
 
-const renderRank = (index: number) => {
-  switch (index + 1) {
-    case 1:
-      return (
-        <FastImage
-          style={styles.a2cef328039ff11ec8ae839f315486395}
-          source={require('../../assets/images/rank1.png')}
-        />
-      );
-
-    case 2:
-      return (
-        <FastImage
-          style={styles.a2cef599039ff11ec8ae839f315486395}
-          source={require('../../assets/images/rank2.png')}
-        />
-      );
-
-    case 3:
-      return (
-        <FastImage
-          style={styles.a2cef599139ff11ec8ae839f315486395}
-          source={require('../../assets/images/rank3.png')}
-        />
-      );
-
-    default:
-      return null;
-  }
-};
-
 const RankItem = ({item, index}: any) => {
   let navigation: any = useNavigation();
   return (
@@ -80,10 +49,6 @@ const RankItem = ({item, index}: any) => {
               {formatMoney(item.total_view)}
             </TText>
           </View>
-        </View>
-
-        <View style={styles.a2ceff5d039ff11ec8ae839f315486395}>
-          {renderRank(index)}
         </View>
       </View>
     </TouchableOpacity>
