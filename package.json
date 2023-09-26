@@ -12,6 +12,8 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/netinfo": "^9.4.1",
+    "@react-native-firebase/admob": "^11.5.0",
+    "@react-native-firebase/app": "^11.5.0",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
@@ -31,6 +33,7 @@
     "react-native-screens": "^3.24.0",
     "react-native-simple-toast": "^3.0.1",
     "react-native-snap-carousel": "^3.9.1",
+    "react-native-splash-screen": "^3.3.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-native-svg": "^13.13.0",
     "react-native-tab-view": "^3.5.2",

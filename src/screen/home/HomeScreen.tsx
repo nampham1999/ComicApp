@@ -3,14 +3,15 @@ import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 import HomeBanner from '../../components/banner/HomeBanner';
 import CardPostScroll from '../../components/card/CardPost';
-import dataService from '../../network/dataService';
 import Nointernet from '../../components/network/Nointernet';
+import dataService from '../../network/dataService';
 // import NetInfo from '@react-native-community/netinfo';
 // import Nointernet from '../components/network/Nointernet';
 // import SimpleToast from 'react-native-simple-toast';
 import RankComic from '../../components/rank/RankComic';
 // var DOMParser = require('react-native-html-parser').DOMParser;
-
+import {BannerAd, BannerAdSize} from '@react-native-firebase/admob';
+import ads from '../../constant/ads';
 interface Props {
   banner: any;
   newpost: any;
@@ -144,6 +145,13 @@ export class HomeScreen extends Component<Props, State> {
           <HomeBanner data={this.props.banner} />
 
           <RankComic />
+          <BannerAd
+            size={BannerAdSize.SMART_BANNER}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+            unitId={ads.idBanner}
+          />
           <CardPostScroll
             data={this.props.newpost}
             title="TRUYỆN MỚI CẬP NHẬT"

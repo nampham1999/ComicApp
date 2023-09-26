@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "159214965771",
+    "project_id": "comic-9bbae",
+    "storage_bucket": "comic-9bbae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159214965771:android:cff42bed62c2dd4a5b230e",
+        "android_client_info": {
+          "package_name": "com.nsoftware.comic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChWvRAdlvE8_MALydmk6-Yf4Mfi6QRTfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,13 +12,13 @@ const Tab = createBottomTabNavigator();
 function BottomTab() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        labelPosition: 'below-icon',
-        keyboardHidesTabBar: true,
-        allowFontScaling: false,
-        style: {
-          borderTopWidth: 1,
-          borderTopColor: '#eeeeee',
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        headerShown: false,
+        tabBarAllowFontScaling: false,
+        tabBarActiveTintColor: '#e91e63',
+        tabBarStyle: {
+          paddingBottom: 5,
         },
       }}>
       <Tab.Screen
@@ -52,7 +52,7 @@ function BottomTab() {
         name="categories"
         component={Categories}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         options={{
           headerShown: false,
           tabBarIcon: (props: any) => <Ionicons name="search" {...props} />,
@@ -60,7 +60,7 @@ function BottomTab() {
         }}
         name="search"
         component={Search}
-      /> */}
+      />
     </Tab.Navigator>
   );
 }
